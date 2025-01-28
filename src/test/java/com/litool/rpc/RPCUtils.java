@@ -30,6 +30,28 @@ public class RPCUtils {
     @Value("${dubbo.consumer.version}") // 需要开启SpringRunner才能注入
     private static String VERSION = "2.0.0";
 
+    public static  <S> S register(Class interfaceClass){
+        // 创建应用配置
+        ApplicationConfig application = new ApplicationConfig();
+        application.setName("dubbo-client");
+
+        // 创建注册中心配置
+        RegistryConfig registry = new RegistryConfig();
+        registry.setAddress(getAddress());
+
+        // 创建服务引用配置
+        ReferenceConfig<S> reference = new ReferenceConfig<>();
+        reference.setApplication(application);
+        reference.setRegistry(registry);
+        reference.setVersion(VERSION);
+        reference.setRetries(0);
+        reference.setInterface(interfaceClass);
+
+        // 获取远程服务代理
+        S serviceGet = reference.get();
+        return serviceGet;
+    }
+
     public static  <S,R> R request(Function<S,R> function,Class interfaceClass){
         // 创建应用配置
         ApplicationConfig application = new ApplicationConfig();

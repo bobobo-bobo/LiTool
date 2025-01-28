@@ -1,6 +1,7 @@
 package com.litool.rpc;
 
 import com.litool.demo.service.TestService;
+import com.litool.utils.timedot.TimeRecordUtils;
 import org.junit.jupiter.api.Test;
 
 import java.util.function.Function;
@@ -13,7 +14,7 @@ import java.util.function.Function;
 public class RPCTest {
 
     @Test
-    public void allTagConfig() {
+    public void test() {
         Function<TestService, String> function = (service) -> {
             String hello = service.test("hello");
             return hello;

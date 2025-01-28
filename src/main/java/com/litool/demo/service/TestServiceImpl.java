@@ -19,6 +19,7 @@ public class TestServiceImpl implements TestService {
     public String test(String arg) {
         TimeRecordUtils.init("测试任务");
         TimeRecordUtils.dot(() -> System.out.println(arg),"输出入参");
+        TimeRecordUtils.print();
         return arg;
     }
 }

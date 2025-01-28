@@ -144,6 +144,18 @@ public class TimeRecordUtils {
 		logger.info(stopWatch.prettyPrint());
 	}
 
+	/**
+	 * 获取计时器
+	 */
+	public static StopWatch getStopWatch(){
+		StopWatch stopWatch = TimeRecordUtils.stopWatch.get();
+		if (Objects.isNull(stopWatch)){
+			System.out.println("执行时间记录主题未初始化");
+			throw new RuntimeException("执行时间记录主题未初始化");
+		}
+		return stopWatch;
+	}
+
 
 	public static void main(String[] args) {
 		init("测试任务");

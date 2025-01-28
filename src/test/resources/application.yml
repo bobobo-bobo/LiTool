@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: LiTool
+
+logging:
+  level:
+    root: info
+
+dubbo:
+  application:
+    name: LiTool
+    id: LiTool
+    serialize-check-status : WARN
+    qos-enable: false
+  protocol:
+    id: dubbo
+    name: dubbo
+    status: server
+    port: 20990
+  scan:
+    base-packages: com.litool.demo.service
+  registry:
+    address: zookeeper://zk-0.zk-hs.docker34.svc.qipeipu.k8s.test:2181?backup=zk-1.zk-hs.docker34.svc.qipeipu.k8s.test:2181,zk-2.zk-hs.docker34.svc.qipeipu.k8s.test:2181|zookeeper://zk02-0.zk02-hs.docker34.svc.qipeipu.k8s.test:2181?backup=zk02-1.zk02-hs.docker34.svc.qipeipu.k8s.test:2181,zk02-2.zk02-hs.docker34.svc.qipeipu.k8s.test:2181
+    id: registryConfig
+    port: 2181
+  provider:
+    filter: default
+    loadbalance: roundrobin
+    version: 2.0.0
+  consumer:
+    filter: DubboCatFilter,default
+    loadbalance: roundrobin
+    check: false
+    timeout: 5000
+    version: 1.0.0

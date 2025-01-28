@@ -38,7 +38,7 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
-            <scope>runtime</scope>
+            <scope>test</scope>
             <optional>true</optional>
         </dependency>
         <dependency>
@@ -63,21 +63,6 @@
             <version>3.2.13</version>
         </dependency>
 
-        <dependency>
-            <groupId>com.baturu.trade</groupId>
-            <artifactId>trade-service-api</artifactId>
-            <version>1.14.29_orderFeedback-RELEASE</version>
-            <exclusions>
-                <exclusion>
-                    <artifactId>baturu-dubbo-combination-config</artifactId>
-                    <groupId>com.baturu.utils</groupId>
-                </exclusion>
-                <exclusion>
-                    <artifactId>baturu-dubbo-combination</artifactId>
-                    <groupId>com.baturu.utils</groupId>
-                </exclusion>
-            </exclusions>
-        </dependency>
     </dependencies>
 
     <build>
