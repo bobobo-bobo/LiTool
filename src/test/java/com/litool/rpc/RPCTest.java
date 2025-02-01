@@ -15,9 +15,9 @@ public class RPCTest {
 
     @Test
     public void test() {
-        Function<TestService, String> function = (service) -> {
-            String hello = service.test("hello");
-            return hello;
+        Function<TestService, Void> function = (service) -> {
+            service.doSomethingWithTiming();
+            return null;
         };
         RPCUtils.request(function,TestService.class);
     }

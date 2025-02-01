@@ -8,4 +8,6 @@ public interface TestService {
 
 
     String test(String arg);
+
+    public void doSomethingWithTiming();
 }

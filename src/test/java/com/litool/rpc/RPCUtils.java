@@ -78,7 +78,7 @@ public class RPCUtils {
 
     private static void showResult(Object result) {
         if (Objects.isNull(result)) {
-            System.out.println("响应不存在");
+            System.out.println("响应为null");
             return;
         }
         // 判断body类型
