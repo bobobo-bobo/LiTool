@@ -25,7 +25,7 @@ public class RPCUtils {
     private static final Integer URL_TYPE = 2;
     private static final String DEFAULT_URL_PREFIX = "";
     private static final String LOCAL_ZOOKEEPER_URL_PREFIX = "";
-    private static final String REMOTE_ZOOKEEPER_URL_PREFIX = "zookeeper://zk-0.zk-hs.docker34.svc.qipeipu.k8s.test:2181?backup=zk-1.zk-hs.docker34.svc.qipeipu.k8s.test:2181,zk-2.zk-hs.docker34.svc.qipeipu.k8s.test:2181";
+    private static final String REMOTE_ZOOKEEPER_URL_PREFIX = "zookeeper://localhost:2181?backup=localhost:2181";
 
     @Value("${dubbo.consumer.version}") // 需要开启SpringRunner才能注入
     private static String VERSION = "2.0.0";

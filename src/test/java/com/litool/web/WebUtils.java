@@ -45,8 +45,8 @@ public class WebUtils {
 
 
 
-    public static void setToken(String token) {
-        headers.set(TOKEN_HEADER, token);
+    public static void setToken(String tokenHeader,String token) {
+        headers.set(tokenHeader, token);
     }
 
     public static <T> ResponseEntity<T> request(String url,

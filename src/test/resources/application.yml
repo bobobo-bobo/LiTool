@@ -20,9 +20,8 @@ dubbo:
   scan:
     base-packages: com.litool.demo.service
   registry:
-    address: zookeeper://zk-0.zk-hs.docker34.svc.qipeipu.k8s.test:2181?backup=zk-1.zk-hs.docker34.svc.qipeipu.k8s.test:2181,zk-2.zk-hs.docker34.svc.qipeipu.k8s.test:2181|zookeeper://zk02-0.zk02-hs.docker34.svc.qipeipu.k8s.test:2181?backup=zk02-1.zk02-hs.docker34.svc.qipeipu.k8s.test:2181,zk02-2.zk02-hs.docker34.svc.qipeipu.k8s.test:2181
+    address: zookeeper://127.0.0.1:2181
     id: registryConfig
-    port: 2181
   provider:
     filter: default
     loadbalance: roundrobin
