@@ -20,8 +20,9 @@ dubbo:
   scan:
     base-packages: com.litool.demo.service
   registry:
-    address: zookeeper://127.0.0.1:2181
+    address: zookeeper://127.0.0.1:2181?backup=localhost:2181
     id: registryConfig
+    port: 2181
   provider:
     filter: default
     loadbalance: roundrobin

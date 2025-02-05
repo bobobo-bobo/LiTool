@@ -24,7 +24,7 @@ public class WebUtils {
      * 1:本地
      * 2：远程
      */
-    private static final Integer URL_TYPE = 1;
+    private static Integer URL_TYPE = 0;
     private static final String DEFAULT_URL_PREFIX = "";
     private static final String LOCAL_URL_PREFIX = "http://localhost:8080/";
     private static final String REMOTE_URL_PREFIX = "http://docker33-as.qipeipu.net/";
@@ -43,6 +43,17 @@ public class WebUtils {
         headers.set(TOKEN_HEADER, TOKEN);
     }
 
+    /**
+     * 0:自定义
+     * 1:本地
+     * 2：远程
+     */
+    public static void setUrlType(Integer urlType) {
+        if (urlType == null) {
+            return;
+        }
+        URL_TYPE = urlType;
+    }
 
 
     public static void setToken(String tokenHeader,String token) {

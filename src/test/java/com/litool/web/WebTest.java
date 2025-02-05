@@ -1,13 +1,10 @@
 package com.litool.web;
 
 
-import com.litool.web.WebUtils;
-import org.assertj.core.util.Maps;
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.http.*;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
-
 
 import java.net.MalformedURLException;
 import java.util.ArrayList;
@@ -19,7 +16,7 @@ import java.util.Map;
  * @author libinzhou
  * @date 2024/12/26 9:56
  */
-@SpringBootTest
+//@SpringBootTest
 public class WebTest {
 
 
@@ -77,6 +74,7 @@ public class WebTest {
         body.put("messages",this.getMessages());
         body.put("stream",false);
 
+        WebUtils.setUrlType(0);
         WebUtils.setToken("Authorization","Bearer sk-22c6b90c060a4aa9be7a2cba242e42d5");
         ResponseEntity<String> response = WebUtils.request(
                 "https://api.deepseek.com/chat/completions",
